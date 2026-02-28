@@ -23,9 +23,10 @@ function Loops() {
 
       <div className='h-[100vh] overflow-y-scroll snap-y snap-mandatory scrollbar-hide'>
         {loopData.map((loop, index) => (
-          <div className='h-screen snap-start' key={loop._id}>
+          <div className='h-screen snap-start relative' key={loop._id}>
             <LoopCard loop={loop} index={index} showAdCallback={handleShowAd} />
-            {showAd && index > 0 && index % 3 === 0 && (
+
+            {showAd && index > 0 && index % 2 === 0 && (
               <div className='absolute top-0 left-0 w-full h-full bg-black flex items-center justify-center z-50'>
                 <ins className="adsbygoogle"
                      style={{display:"block"}}
