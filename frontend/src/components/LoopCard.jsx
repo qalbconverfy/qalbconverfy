@@ -10,10 +10,6 @@ import axios from 'axios';
 import { serverUrl } from '../App';
 import { IoSendSharp } from "react-icons/io5";
 
-// AD SENSE CONFIG
-const AD_CLIENT = "ca-pub-XXXXXXXXXXXXXX"; // Replace with your AdSense client ID
-const AD_SLOT = "YYYYYYYYYY"; // Replace with your AdSense ad slot
-
 function LoopCard({ loop, index, showAdCallback }) {
   const videoRef = useRef();
   const commentRef = useRef();
@@ -66,9 +62,9 @@ function LoopCard({ loop, index, showAdCallback }) {
     } catch(error) { console.log(error); }
   }
 
-  // Ad display logic after N reels
+  // Ad display logic after 2 reels
   useEffect(() => {
-    if(index > 0 && index % 3 === 0){ // every 3 reels
+    if(index > 0 && index % 2 === 0){ // every 2 reels
       showAdCallback();
     }
   }, [index, showAdCallback]);
@@ -111,7 +107,7 @@ function LoopCard({ loop, index, showAdCallback }) {
 
   return (
     <div className='w-full lg:w-[480px] h-[100vh] flex items-center justify-center border-l-2 border-r-2 border-gray-800 relative overflow-hidden'>
-      
+
       {showHeart &&
         <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 heart-animation z-50'>
           <GoHeartFill className='w-[100px] h-[100px] text-white drop-shadow-2xl' />
