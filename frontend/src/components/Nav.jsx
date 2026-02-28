@@ -11,7 +11,7 @@ function Nav() {
   const navigate=useNavigate()
   const {userData}=useSelector(state=>state.user)
   return (
-    <div className='w-[100%] lg:w-[40%] h-[80px] bg-gradient-to-r from-black via-blue-700 to-black flex justify-around items-center fixed bottom-[0px] rounded-t-[17px] shadow-2xl shadow-[#000000] z-[100]'>
+    <div className='w-[100%] lg:w-[40%] h-[80px] bg-gradient-to-r from-black via-blue-700 to-black flex justify-around items-center fixed bottom-[0px] rounded-t-[15px] shadow-2xl shadow-[#000000] z-[100]'>
       <div onClick={()=>navigate("/")}><GoHomeFill className='text-white cursor-pointer w-[25px] h-[25px]'/></div>
      <div onClick={()=>navigate("/search")}><FiSearch className='text-white cursor-pointer w-[25px] h-[25px]'/></div>
      <div onClick={()=>navigate("/upload")}><FiPlusSquare className='text-white cursor-pointer w-[25px] h-[25px]'/></div>
